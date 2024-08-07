@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { appColors } from "./appColors";
 
 type CardProps = Readonly<{
   variant:
@@ -50,21 +51,21 @@ export function Card({ variant, onClick }: CardProps) {
 
 const styles: { [key: string]: CSSProperties } = {
   largeCard: {
-    backgroundColor: "white",
-    color: "black",
+    backgroundColor: appColors.neutral.white,
+    color: appColors.neutral.black,
     padding: "10px 20px",
     borderRadius: "5px",
-    border: "none",
+    border: `1px solid ${appColors.color.blue}`,
     marginTop: "20px",
     width: "100%",
     height: "100%",
   },
   smallCard: {
-    backgroundColor: "white",
-    color: "black",
+    backgroundColor: appColors.neutral.white,
+    color: appColors.neutral.black,
     padding: "10px 20px",
     borderRadius: "5px",
-    border: "none",
+    border: `1px solid ${appColors.neutral.black}`,
     marginTop: "20px",
     width: "50%",
     height: "50%",
