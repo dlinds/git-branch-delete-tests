@@ -1,3 +1,29 @@
+import { useState } from "react";
+
 export function Button() {
-  return <button className="button">Click me</button>;
+  const [amountOfClicks, setAmountOfClicks] = useState(0);
+
+  return (
+    <>
+      <p>Amount of clicks: {amountOfClicks}</p>
+      <button
+        className="button"
+        style={styles.button}
+        onClick={() => setAmountOfClicks((prev) => prev + 1)}
+      >
+        Increase clicks
+      </button>
+    </>
+  );
 }
+
+const styles = {
+  button: {
+    backgroundColor: "red",
+    color: "white",
+    padding: "10px 20px",
+    borderRadius: "5px",
+    border: "none",
+    marginTop: "20px",
+  },
+};
