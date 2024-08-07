@@ -9,7 +9,7 @@ export function Button() {
       <button
         className="button"
         style={styles.button}
-        onClick={() => setAmountOfClicks(amountOfClicks + 1)}
+        onClick={() => setAmountOfClicks((prev) => prev + 1)}
       >
         Increase clicks
       </button>
