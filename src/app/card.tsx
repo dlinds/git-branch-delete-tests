@@ -9,6 +9,7 @@ type CardProps = Readonly<{
         subTitle: string;
         description: string;
         onClose?: () => void;
+        backgroundColor?: string;
       }
     | {
         type: "SMALL";
@@ -21,7 +22,13 @@ type CardProps = Readonly<{
 export function Card({ variant, onClick }: CardProps) {
   if (variant.type === "LARGE") {
     return (
-      <a style={styles.largeCard} onClick={onClick}>
+      <a
+        style={{
+          ...styles.largeCard,
+          backgroundColor: variant.backgroundColor,
+        }}
+        onClick={onClick}
+      >
         {!!variant.onClose && (
           <div
             style={{ display: "flex", justifyContent: "space-between" }}
